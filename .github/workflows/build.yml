@@ -18,7 +18,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: ${{ (inputs.amend_commit == true && 2) || 1 }}
+          fetch-depth: 0
           submodules: recursive
           
       - name: Get branch name
@@ -44,6 +44,10 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           path: firmware/${{ steps.branch-name.outputs.branch }}
+
+      - name: Sync with remote branch
+        run: |
+          git pull --rebase origin ${{ steps.branch-name.outputs.branch }}
 
       - name: Commit updated images
         uses: stefanzweifel/git-auto-commit-action@v5
