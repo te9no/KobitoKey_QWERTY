@@ -33,7 +33,7 @@ layers:
   - APOS
   - LSHFT
   - LALT
-  - LCMD
+  - LGUI
   - {t: SPACE, h: FUNCTION}
   - LCTRL
   - BSPC
