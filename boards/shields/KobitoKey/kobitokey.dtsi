@@ -59,7 +59,6 @@
     };
 };
 
-
 / {
     /* ★ 単体の物理レイアウト定義（Studio不要の最小形） */
     physical_layout0: physical_layout_0 {
